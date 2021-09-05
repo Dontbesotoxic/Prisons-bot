@@ -1,0 +1,49 @@
+{
+  "general": {
+    "token": "ODY0NjA4MDE2MzUxNzU2MzA4.YO369g.gCw9suTFaKf2VGWa4VARQuc9YoM",
+    "prefix": ".",
+    "version": "1.8",
+    "serverIP": "akumamc.net",
+    "username": "jackthestaryt@Outlook.com",
+    "password": "Toxic1234!",
+    "embedColor": "#DF9A9A",
+    "hub_command": "/joinqueue prison",
+    "ctopCommand": "/cell top",
+    "Fshowcommand":"/cell show",
+    "AlertsPingRole":"864608232094040086",
+    "Cellalerts": true
+
+  },
+  "channelIDs": {
+    "serverchatID": "880156361189638215",
+    "celltracker":"864799447224156161",
+    "joinchannelID": "null",
+    "leavechannelID": "null",
+    "modlogschannelID": "null",
+    "whitelistlogsID": "null",
+    "wallschannelID": "null",
+    "bufferchannelID": "null",
+    "eventchannelid":"880167470231588865"
+  },
+  "Configs": {
+    "vanitymc": true,
+    "AkumaMC": false  
+  },
+  "enableCommands": {
+    "autoctop":true,
+    "baltop": true,
+    "flist": true,
+    "ctop": true,
+    "cshow": true,
+    "joins": true,
+    "leaves": true,
+    "lock": true,
+    "purge": true,
+    "reload": true,
+    "serverchat": true,
+    "sudo": true,
+    "tps": true,
+    "unlock": true,
+    "vanish": true
+  }
+}
