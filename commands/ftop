@@ -1,0 +1,14 @@
+
+
+AkumaMC Ftop Settings!
+-------------------------------------------------------
+// regex.regex = /^[1-9#]|([AkumaMC])/i;
+//   factionNames.push(split[1] + " " + split[2])
+//  currentWorth.push(split[3] + " " + split[4]);
+------------------------------------------------------
+Vanitymc Ftop Settings!
+-----------------------------------------------------
+regex.regex = /^[1-9#]|(Invalid, page must be between)/i;
+factionNames.push(split[0] + " " + split[1]);
+currentWorth.push(split[3] + " " + split[4] + " " + split[5]);
+--------------------------------------------------------------  
