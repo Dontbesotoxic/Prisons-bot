@@ -150,22 +150,17 @@ bot.client.on('kicked', reason => {
     }, 30000);
 });
 bot.client.on("windowOpen", function (window) {
-    let countdown = 5
-    while (countdown > 0) {
-        countdown = countdown - 1 // Decrement countDown by 1
-
-    bot.client.setQuickBarSlot(5);
 
    let foundItem = window.slots.find(x =>x.slot=== 12).nbt.value.display.value.Lore.value.value
-   bot.client.activateItem();
-
-
-   console.log(foundItem)  
-
-  bot.client.closeWindow(window)
+    if (foundItem.includes("'§c§m------------',")){
+        foundItem.replace('§c§m------------', ' ')
     }
 
-})
+
+  bot.client.closeWindow(window)
+    })
+
+
 
 bot.client._client.on("scoreboard_score", packet => {
     let allP = [];
@@ -328,16 +323,6 @@ bot.client.on("message", async message => {
         bot.client.chat("1970")
     }
 */
-    if (parsedMsg.includes("Trivia » ovenjew was correct, and has won a Rare Key!")) {
-        const Channel1 = client.channels.cache.get(config.channelIDs.eventchannelid)
-        const embed = new Discord.MessageEmbed()
-        .setDescription(`What the fuck it worked lol! `+`\`\`\`${parsedMsg}\`\`\``)
-        .setColor(config.general.embedColor)
-        .setFooter("LOL GET FUCKED RETARDS")
-        .setTimestamp(new Date())   
-        Channel1.send(embed)
-        Channel1.send('<@&' + config.general.AlertsPingRole +'>')
-    }
     if (parsedMsg.includes("```@everyone")) {
         return
     }
@@ -347,13 +332,13 @@ bot.client.on("message", async message => {
         .setDescription(`${parsedMsg}`)
         .setColor(config.general.embedColor)  
         Channel1.send(embed)
+        bot.client.chat("WOO TRIVA")
     }
     
     if (parsedMsg.includes("was correct, and has won a Rare Key!")) {
         return
     }
-        
-    
+
     if (parsedMsg.length >= 2000 ){
         console.log(chalk.bgRed.bold("Ignore this , This is down to [item]"))
       return }

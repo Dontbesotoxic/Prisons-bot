@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 const config = require("../config.json")
 const fs = require('fs');
 module.exports = {
-    name: 'btop',
-    description: "Block Top",
+    name: 'ttop',
+    description: "Token Top",
     category: 'prisons',
     enabled: JSON.parse(fs.readFileSync('./config.json')).enableCommands.sudo,
     execute(message, args, bot, chatData, saving, regex){
@@ -13,7 +13,7 @@ module.exports = {
         regex.regex = /'([A-Z 1-100000 ,])\w+'/;
         saving.chat = true;
         
-        bot.client.chat(`/blocktop`);
+        bot.client.chat(`/tokentop`);
         
         bot.client.on("windowOpen", function (window) {
             let countdown = 5
@@ -21,12 +21,9 @@ module.exports = {
                 countdown = countdown - 1 // Decrement countDown by 1
         
         
-           let foundItem = window.slots.find(x =>x.slot=== countdown).nbt.value.display.value.Lore.value.value
-           var foundItem2;
-           foundItem2 = foundItem.toString();
-            
-           foundItem2.replace(/'([A-Z 1-100000 ,])\w+'/ ," ")
+           let foundItem = window.slots.find(x =>x.slot === countdown).nbt.value.display.value.Lore.value.value
 
+       
            let embedSudo = new Discord.MessageEmbed()
            .setColor(config.general.embedColor)
            .setDescription(`${foundItem}`)
@@ -37,6 +34,7 @@ module.exports = {
         console.log(foundItem)
           bot.client.closeWindow(window)
             }
+        
         
         })
     }
